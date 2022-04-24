@@ -1,0 +1,33 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <a href="/articles/">My Articles</a>
+       <%if(user){%>
+        <div class="flex space-between">
+           <div>
+               <h6><%=user.name%></h6>
+           </div>
+           <div>
+           <a href="/articles/new" class="btn">Add Article</a>
+          
+           <a href="/users/logout" class="btn">Logout</a>
+       </div>
+       </div>
+       <%}else{%>
+        <div>
+           
+         <a href="/users/login" class="btn">Login</a>
+         <a href="/users/" class="btn">Register</a>
+       </div>
+      <%}%>
+    </header>

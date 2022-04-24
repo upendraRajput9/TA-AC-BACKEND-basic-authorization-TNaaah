@@ -1,0 +1,13 @@
+<% include partials/header %>
+    <section class="form-section">
+       
+    <form class="form" action="/articles/" method="POST">
+        <h2>Add Article</h2>
+    <input type="text" placeholder="Title" name="title">
+    <textarea name="description" placeholder="Description" cols="30" rows="10"></textarea>
+    <input type="text" placeholder="Tags" name="tags">
+    <input class="submit" type="submit">
+    </form>
+</section>
+    
+<% include partials/footer %>
