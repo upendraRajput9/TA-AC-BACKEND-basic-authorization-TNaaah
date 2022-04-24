@@ -1,0 +1,48 @@
+<% include partials/header %>
+    <section>
+    <h1><%=article.title%></h1>
+     <h2><%=article.author.name%></h2>
+<p><%=article.description%></p>
+<ul><%article.tags.forEach(tag=>{%>
+    <li><%=tag%></li>
+    <%})%>
+
+</ul>
+<h3>likes:<%=article.likes%></h3>
+<%if(user.name==article.author.name){%>
+    <a href="/articles/<%=article._id%>/edit">
+        <button>Edit</button>
+    </a>
+    <a href="/articles/<%=article._id%>/delete">
+        <button>Delete</button>
+    </a>
+    <%}%>
+
+<a href="/articles/<%=article._id%>/like">
+    <button>Like</button>
+</a>
+<a href="/articles/<%=article._id%>/dislike">
+    <button>Dislike</button>
+</a>
+    </section>
+
+    <section>
+        <form action="/articles/<%=article._id%>/comments" method="POST">
+            <textarea name="content" placeholder="Comments" cols="30" rows="5"></textarea>
+            <input type="submit" value="Comment">
+        </form>
+
+        <article>
+            <%article.comments.forEach(comment=>{%>
+<h3><%=comment.author%></h3>
+<p><%=comment.content%></p>
+<a href="/comments/<%=comment._id%>/like">like</a>   <a href="/comments/<%=comment._id%>/dislike">dislike</a> <span>: <%=comment.likes%></span><br>
+<%if(user.name==comment.author){%>
+<a href="/comments/<%=comment._id%>/edit"><button>Edit</button></a>
+<a href="/comments/<%=comment._id%>/delete%>"><button>Delete</button></a>
+<%}%>
+            <%})%>
+        </article>
+    </section>
+</body>
+</html>

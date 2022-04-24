@@ -1,0 +1,15 @@
+<% include partials/header %>
+    <section><%list.forEach(user=>{%>
+        <article>
+            <a href="/articles/<%=user._id%>">
+                <h2><%=user.title%></h2>
+            </a>
+<p><%=user.description%></p>
+          
+<p></p>
+        </article>
+        <%})%>
+        
+    </section>
+</body>
+</html>
