@@ -1,0 +1,27 @@
+<%include partiales/header%>
+    <figure>
+        <img src="/images/<%=product.image%>" alt="<%=product.name%>">
+    </figure>
+    <h1><%=product.name%></h1>
+    <h3>quantity of product:<%=product.quantity%></h3>
+    <h2>Price:<%=product.price%></h2>
+    <h4>likes:<%=product.likes%></h4>
+   
+        <%if(isAdmin){%>
+            <a href="/products/<%=product._id%>/edit">
+                <button>Edit</button>
+            </a> 
+          
+                <a href="/products/<%=product._id%>/delete">
+                    <button>Delete</button>
+                </a> 
+                <% } %>
+   
+    <a href="/products/<%=product._id%>/like">
+        <button>Like</button>
+    </a>
+    <a href="/products/<%=product._id%>/dislike">
+        <button>Disike</button>
+    </a>
+</body>
+</html>

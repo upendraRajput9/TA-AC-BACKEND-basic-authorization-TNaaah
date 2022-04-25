@@ -1,0 +1,12 @@
+<%include partiales/header%>
+    <section>
+        <form action="/products/<%=product._id%>/edit" method="POST" enctype="multipart/form-data">
+            <input value="<%=product.name%>" type="text" name="name" placeholder="product_name">
+            <input value="<%=product.quantity%>" type="number" name="quantity" placeholder="Quantity">
+            <input value="<%=product.price%>" type="number" name="price" placeholder="Price">
+            <input value="<%=product.image%>" type="file" name="image">
+            <input type="submit">
+        </form>
+    </section>
+</body>
+</html>
