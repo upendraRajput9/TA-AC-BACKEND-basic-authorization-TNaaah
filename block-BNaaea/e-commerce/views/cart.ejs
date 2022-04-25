@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <a href="/products">
+        <button>Back</button></a>
+    </header>
+    <section>
+        <% user.cart.forEach(product=>{%>
+        <article>
+            <figure>
+                <img src="/images/<%=product.image%>" alt="<%=product.name%>">
+            </figure>
+            <h1><%=product.name%></h1>
+            <h3>quantity of product:<%=product.quantity%></h3>
+            <h2>Price:<%=product.price%></h2>   
+            <a href="/users/<%=product._id%>/<%=user._id%>/remove">
+                <button>Remove to cart</button>
+            </a>         
+        </article>
+        <%})%>
+    </section>
+</body>
+</html>
