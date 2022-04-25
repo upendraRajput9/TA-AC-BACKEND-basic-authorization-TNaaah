@@ -1,0 +1,35 @@
+<%include partiales/header%>
+    <header>
+        <a href="/users/<%=userId%>">
+            <button>Cart</button>
+        </a>
+        <%if(isAdmin){%>
+            <a href="/products/new">
+                <button>Add products</button>
+            </a>
+       <% }%>
+        
+    </header>
+
+    <section>
+        <% list.forEach(product=>{%>
+        <article>
+            <figure>
+                <img src="/images/<%=product.image%>" alt="<%=product.name%>">
+            </figure>
+            <h1><%=product.name%></h1>
+            <h3>quantity of product:<%=product.quantity%></h3>
+            <h2>Price:<%=product.price%></h2>
+            <h4>likes:<%=product.likes%></h4>
+            <a href="/products/<%=product._id%>">
+                <button>details</button>
+            </a>
+            <a href="/users/<%=product._id%>/<%=userId%>">
+                <button>Add to cart</button>
+            </a>
+            
+        </article>
+        <%})%>
+    </section>
+</body>
+</html>
