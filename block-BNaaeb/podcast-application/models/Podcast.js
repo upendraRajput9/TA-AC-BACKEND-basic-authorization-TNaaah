@@ -5,7 +5,7 @@ var podcostSchema = new Schema({
     singer:{type:String},
     description:{type:String,required:true},
     cover:{type:String,required:true},
-    audioTrack:{type:String,required:true},
+    audioTrack:{type:String},
     isVerified: {type: Boolean, default: false},
     subscription:{type:String,default:"free"},
     likes:{type:Number,default:0},

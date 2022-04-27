@@ -1,0 +1,15 @@
+
+<%include partiales/header%>
+    <section><%list.forEach(podcast=>{%>
+        <article>
+            <h1><%=podcast.title%></h1>
+            <img src="/images/<%=podcast.cover%>" alt="#"> <br>
+            <audio controls>
+                <source src="/images/<%=podcast.audioTrack%>" type="audio/ogg">
+              Your browser does not support the audio element.
+              </audio>
+        </article>
+    <%})%>
+    </section>
+</body>
+</html>
