@@ -9,13 +9,22 @@
 </head>
 
 <body>
+    <header>
+        <a href="/users">Home</a>
+        <a href="/users/logout">logout</a>
+    </header>
     <section>
         <form action="/podcasts" method="POST" enctype="multipart/form-data">
-            <input name="title"  type="text">
-            <input name="description" type="text">
-            <input name="cover" type="file">
-            <input name="audioTrack" type="text">
-            <input name="singer" type="text">
+            <input placeholder="Title" name="title"  type="text">
+            <input type="text" name="singer" placeholder="Singer">
+            <input placeholder="Description" name="description" type="text">
+            <input  name="file" type="file">
+            <input  name="file" type="file">
+            <select name="subscription" placeholder="Subscription Category">
+                <option value="Free"></option>
+                <option value="VIP"></option>
+                <option value="PREMIUM"></option>
+            </select>
             <input type="submit">
         </form>
     </section>
